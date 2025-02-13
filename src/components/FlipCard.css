@@ -1,0 +1,108 @@
+.flip-card-container {
+  position: relative;
+  margin: 20px;
+  padding-bottom: 40px;  /* 为按钮留出空间 */
+}
+
+.flip-card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #2c1810 0%, #4a2a1d 100%);
+  border: 2px solid #c0a080;
+  color: #e6d5c3;
+}
+
+.flip-card-front {
+  background-color: #ffffff;
+}
+
+.flip-card-back {
+  background-color: #f0f0f0;
+  transform: rotateY(180deg);
+}
+
+.category {
+  font-size: 1.2em;
+  color: #c0a080;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 1.6;
+  padding: 0 15px;
+}
+
+.pinyin {
+  display: block;
+  font-size: 0.9em;
+  color: inherit;  /* 继承父元素的颜色 */
+  margin-top: 0.5rem;
+  font-style: italic;
+  opacity: 0.8;   /* 稍微降低不透明度以区分 */
+}
+
+.pinyin-toggle {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  border: 1px solid #c0a080;
+  border-radius: 4px;
+  background-color: #2c1810;
+  color: #e6d5c3;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.pinyin-toggle:hover {
+  background-color: #4a2a1d;
+  border-color: #e6d5c3;
+}
+
+/* 中国风装饰元素 */
+.flip-card-front::before,
+.flip-card-back::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid rgba(192, 160, 128, 0.3);
+  pointer-events: none;
+} 
