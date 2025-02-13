@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import FlipCard from './components/FlipCard';
 import { cards } from './data/cards';
 import './App.css';

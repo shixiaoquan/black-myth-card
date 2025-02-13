@@ -3,16 +3,12 @@ import './FlipCard.css';
 
 interface FlipCardProps {
   front: string;
-  frontPinyin: string;
   back: string;
-  backPinyin: string;
   category: string;
-  categoryPinyin: string;
 }
 
-const FlipCard: React.FC<FlipCardProps> = ({ front, frontPinyin, back, backPinyin, category, categoryPinyin }) => {
+const FlipCard: React.FC<FlipCardProps> = ({ front, back, category }) => {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [showPinyin, setShowPinyin] = useState(false);
 
   const handleCardClick = (e: React.MouseEvent) => {
     // 如果点击的是按钮，不翻转卡片
@@ -20,10 +16,6 @@ const FlipCard: React.FC<FlipCardProps> = ({ front, frontPinyin, back, backPinyi
       return;
     }
     setIsFlipped(!isFlipped);
-  };
-
-  const togglePinyin = () => {
-    setShowPinyin(!showPinyin);
   };
 
   return (
