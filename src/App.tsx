@@ -13,8 +13,11 @@ function App() {
           <FlipCard
             key={card.id}
             front={card.front}
+            frontPinyin={card.frontPinyin}
             back={card.back}
+            backPinyin={card.backPinyin}
             category={card.category}
+            categoryPinyin={card.categoryPinyin}
           />
         ))}
       </div>
